@@ -60,6 +60,7 @@ export default {
     button {
       border-radius: 20px;
       border: none;
+      padding: 15px;
     }
   }
 }
