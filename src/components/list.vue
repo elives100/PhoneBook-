@@ -2,7 +2,9 @@
   <div class="userList">
     <ol v-for="(user, index) in userList" :key="index">
       <li @click="deleteUser(index)">
-        <span :class="{ deleteBorder: borderActive }">{{ user.userName }} / {{ user.phoneNumber }}</span>
+        <span :class="{ deleteBorder: borderActive }"
+          >{{ user.userName }} / {{ user.phoneNumber }}</span
+        >
       </li>
     </ol>
   </div>
@@ -14,8 +16,8 @@ export default {
   methods: {
     deleteUser(index) {
       this.userList.splice(index, 1);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -43,7 +45,8 @@ export default {
   cursor: pointer;
   text-decoration: underline;
   padding: 7px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 25px;
+  color: rgb(145, 30, 30);
 }
 </style>

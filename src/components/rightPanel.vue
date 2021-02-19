@@ -7,10 +7,15 @@
       </div>
       <div class="body">
         <!--List compenent registration-->
-        <user-list :borderActive="borderActive" :userList="recordedUsers"></user-list>
+        <user-list
+          :borderActive="borderActive"
+          :userList="recordedUsers"
+        ></user-list>
       </div>
       <div class="footer">
-        <button @click.stop="borderActive = !borderActive">Delete Record</button>
+        <button @click.stop="borderActive = !borderActive">
+          Delete Record
+        </button>
       </div>
     </div>
   </div>
@@ -23,28 +28,28 @@ import userList from "./list";
 export default {
   name: "rightPanel",
   components: {
-    "user-list": userList
+    "user-list": userList,
   },
   data() {
     return {
       recordedUsers: [],
-      borderActive: false
+      borderActive: false,
     };
   },
   created() {
     //Recieve emitted data
-    bus.$on("addBudget", data => {
+    bus.$on("addBudget", (data) => {
       this.recordedUsers = data;
       console.log(this.recordedUsers);
     });
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
 .userContainer {
-  background-color: rgba(160, 153, 150, 0.219);
+  background-color: rgba(152, 160, 150, 0.219);
   border: 1px black;
   display: flex;
   padding: 20px;
@@ -53,7 +58,7 @@ export default {
   border-radius: 25px;
   box-shadow: 4px 4px 8px;
   .body {
-    margin: 16px;
+    margin: 20px;
   }
   .footer {
     cursor: pointer;

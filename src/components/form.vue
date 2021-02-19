@@ -18,9 +18,9 @@
       />
     </div>
     <div class="warning">
-      <p
-        v-if="value.phoneNumber.length > 0 && value.phoneNumber.length !== 10"
-      >&#40;Must Contain 9 digits&#41;</p>
+      <p v-if="value.phoneNumber.length > 0 && value.phoneNumber.length !== 10">
+        &#40;Must Contain 9 digits&#41;
+      </p>
     </div>
   </div>
 </template>
@@ -36,10 +36,10 @@ export default {
     updateValue() {
       this.$emit("input", {
         userName: this.$refs.username.value,
-        phoneNumber: this.$refs.phonenumber.value
+        phoneNumber: this.$refs.phonenumber.value,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
