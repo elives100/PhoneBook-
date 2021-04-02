@@ -1,26 +1,26 @@
 <template>
-  <div>
-    <div class="inputContainer">
-      <!--Title-->
-      <div class="title">
-        <h3>Add User</h3>
-      </div>
-      <div class="inputBody">
-        <!-- Custom Input Component-->
-        <input-form v-model="userProfile"></input-form>
-        <!--Button disabled conditional-->
-      </div>
-      <div class="inputFooter">
-        <!--Phone Number Alert-->
+  <div class="inputContainer">
+    <!--Title-->
+    <div class="title">
+      <h3>Add User</h3>
+    </div>
+    <div class="inputBody">
+      <!-- Custom Input Component-->
+      <input-form v-model="userProfile"></input-form>
+      <!--Button disabled conditional-->
+    </div>
+    <div class="inputFooter">
+      <!--Phone Number Alert-->
 
-        <button
-          :disabled="
-            userProfile.phoneNumber.length !== 10 ||
-              userProfile.userName.length < 1
-          "
-          @click="submitUser()"
-        >Add</button>
-      </div>
+      <button
+        :disabled="
+          userProfile.phoneNumber.length !== 10 ||
+            userProfile.userName.length < 1
+        "
+        @click="submitUser()"
+      >
+        Add
+      </button>
     </div>
   </div>
 </template>
@@ -33,16 +33,16 @@ import inputForm from "./form";
 export default {
   name: "leftPanel",
   components: {
-    "input-form": inputForm
+    "input-form": inputForm,
   },
   data() {
     return {
       userInfo: [],
       userProfile: {
         userName: "",
-        phoneNumber: ""
+        phoneNumber: "",
       },
-      disableButton: true
+      disableButton: true,
     };
   },
 
@@ -51,13 +51,13 @@ export default {
     submitUser() {
       this.userInfo.push({
         userName: this.userProfile.userName,
-        phoneNumber: this.userProfile.phoneNumber
+        phoneNumber: this.userProfile.phoneNumber,
       });
       bus.$emit("addBudget", this.userInfo);
       this.userProfile.userName = "";
       this.userProfile.phoneNumber = "";
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -85,5 +85,9 @@ export default {
     overflow: hidden;
     padding: 15px;
   }
+}
+
+@media only screen and (max-device-width: 414px) {
+  /* Styles */
 }
 </style>

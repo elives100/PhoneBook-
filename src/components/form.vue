@@ -60,6 +60,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+
   input {
     border-radius: 20px;
     border: none;
@@ -74,11 +75,16 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .inputPair {
-    flex-direction: row;
     margin-top: 0px;
   }
   .warning {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  input {
+    width: 220px;
   }
 }
 </style>

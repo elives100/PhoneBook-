@@ -1,22 +1,20 @@
 <template>
-  <div>
-    <!--Stop Modifier to prevent Bubbling-->
-    <div @click.stop="borderActive = false" class="userContainer">
-      <div class="title">
-        <h3>User</h3>
-      </div>
-      <div class="body">
-        <!--List compenent registration-->
-        <user-list
-          :borderActive="borderActive"
-          :userList="recordedUsers"
-        ></user-list>
-      </div>
-      <div class="footer">
-        <button @click.stop="borderActive = !borderActive">
-          Delete Record
-        </button>
-      </div>
+  <!--Stop Modifier to prevent Bubbling-->
+  <div @click.stop="borderActive = false" class="userContainer">
+    <div class="title">
+      <h3>User</h3>
+    </div>
+    <div class="body">
+      <!--List compenent registration-->
+      <user-list
+        :borderActive="borderActive"
+        :userList="recordedUsers"
+      ></user-list>
+    </div>
+    <div class="footer">
+      <button @click.stop="borderActive = !borderActive">
+        Delete Record
+      </button>
     </div>
   </div>
 </template>

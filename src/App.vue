@@ -19,8 +19,8 @@ export default {
   name: "App",
   components: {
     "left-panel": leftPanel,
-    "right-panel": rightPanel
-  }
+    "right-panel": rightPanel,
+  },
 };
 </script>
 

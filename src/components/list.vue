@@ -49,4 +49,10 @@ export default {
   border-radius: 25px;
   color: rgb(145, 30, 30);
 }
+
+@media only screen and (max-width: 700px) {
+  .userList {
+    width: 220px;
+  }
+}
 </style>
