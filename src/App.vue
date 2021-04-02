@@ -66,7 +66,22 @@ export default {
       margin: 20px;
     }
     .left {
+      width: 400px;
+    }
+    .right {
       width: 470px;
+    }
+  }
+}
+@media only screen and (max-width: 415px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    .title {
+      margin: 20px;
+    }
+    .left {
+      width: 300px;
     }
     .right {
       width: 470px;
