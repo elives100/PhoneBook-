@@ -69,15 +69,6 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
-  .userContainer {
-    background-color: rgba(250, 235, 215, 0);
-    box-shadow: none;
-    .body {
-      margin-top: -10px;
-      margin-bottom: 10px;
-    }
-  }
-
   button {
     border-radius: 20px;
     border: none;

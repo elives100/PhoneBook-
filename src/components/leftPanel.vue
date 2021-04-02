@@ -67,10 +67,10 @@ export default {
   background-color: rgba(160, 153, 150, 0.219);
   border: 1px black;
   display: flex;
-  padding: 20px;
   flex-direction: column;
   align-items: center;
   border-radius: 25px;
+  padding: 25px;
   box-shadow: 4px 4px 8px;
   .inputBody {
     flex-basis: 80%;
@@ -85,9 +85,5 @@ export default {
     overflow: hidden;
     padding: 15px;
   }
-}
-
-@media only screen and (max-device-width: 414px) {
-  /* Styles */
 }
 </style>

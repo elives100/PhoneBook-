@@ -5,8 +5,10 @@
         <h1>Phone Book App</h1>
       </div>
       <!--leftPanel and rightPanel are siblings and data traanfers directly-->
-      <left-panel class="left"></left-panel>
-      <right-panel class="right"></right-panel>
+      <div class="panelCont">
+        <left-panel class="left"></left-panel>
+        <right-panel class="right"></right-panel>
+      </div>
     </div>
   </div>
 </template>
@@ -34,58 +36,28 @@ export default {
 }
 /*Grid area to specifty component position*/
 .container {
-  height: 100%;
   display: grid;
-  column-gap: 10px;
+  height: 100%;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-template-areas:
     "top top"
-    "left right";
-  padding-left: 20px;
-  padding-right: 20px;
+    "bottom bottom";
+  padding: 20px;
   background-image: linear-gradient(30deg, #cc2b5e, #753a88);
   .title {
     grid-area: top;
     display: flex;
     justify-content: center;
   }
-  .left {
-    grid-area: left;
-  }
-  .right {
-    grid-area: right;
+  .panelCont {
+    grid-area: bottom;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    .title {
-      margin: 20px;
-    }
-    .left {
-      width: 400px;
-    }
-    .right {
-      width: 470px;
-    }
-  }
 }
 @media only screen and (max-width: 415px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    .title {
-      margin: 20px;
-    }
-    .left {
-      width: 300px;
-    }
-    .right {
-      width: 470px;
-    }
-  }
 }
 </style>
